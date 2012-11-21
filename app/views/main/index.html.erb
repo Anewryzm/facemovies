@@ -1,0 +1,24 @@
+<h1>FaceMovies</h1>
+
+<div class="movie">
+<!--
+ 	<% if !@lastmovies.blank? %>
+	  <% for movie in @lastmovies %>
+	  	<%= movie.title %>
+		<%= raw movie.embed %>
+	  <% end %>
+	<% else %>
+		<p>There is no movies.</p>
+	<% end %>
+ -->
+
+	<% if !@lastmovies.blank? %>
+		<% @lastmovies.each do |movie| %>
+
+		  	<%= link_to movie.title, movie %>
+			<%= raw movie.embed %>
+		<% end %>	
+	<% else %>
+		<p>There is no movies.</p>
+	<% end %>
+</div>

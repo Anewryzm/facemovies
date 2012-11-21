@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facemovie</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
+
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
+
+    var pusher = new Pusher('272d4834d440f23ecac8');
+    var channel = pusher.subscribe('main');
+    channel.bind('movie:create', function(data) {
+      // alert(data);
+      console.log(data);
+      // alert("La pelicula '"+data.movie_title+"' ha sido agregada.");
+      $('#alertas').html(data.movie_title);
+      $('#alertas').fadeIn(1000);
+      // {movie_title: @movie.title, movie_id: @movie.id})
+    });
+
+    channel.bind('movie:show', function(data) {
+      // alert(data);
+      console.log(data);
+      // alert("La pelicula '"+data.movie_title+"' ha sido agregada.");
+      $('#alertas').html(data.movie_title);
+      $('#alertas').fadeIn(1000);
+      // {movie_title: @movie.title, movie_id: @movie.id})
+    });
+
+
+  </script>
+
+
+</head>
+<body>
+<section>
+	<nav>
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="/users">user</a></li>
+			<li><a href="/movies">movies</a></li>
+
+			<li><a href="/auth/twitter">Twitter Login</a></li>
+		</ul>
+	</nav>
+	<div id="alertas"></div>
+</section>
+
+<%= yield %>
+
+</body>
+</html>
