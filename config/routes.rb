@@ -1,4 +1,6 @@
 Facemovie::Application.routes.draw do
+  resources :follows
+
   get "main/index"
 
   resources :sessions
@@ -7,9 +9,9 @@ Facemovie::Application.routes.draw do
 
   resources :movies
 
-  root :to => 'main#index'
+  root :to => 'main#index' # MainController.index
 
-  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/:provider/callback" => "sessions#create" # SessionController.create
   match "/sign_out" => "sessions#destroy", :as => :sign_out
 
   # The priority is based upon order of creation:

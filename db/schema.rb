@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121015302) do
+ActiveRecord::Schema.define(:version => 20121126052633) do
+
+  create_table "follows", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "movies", :force => true do |t|
     t.string   "title"
-    t.text     "embed",      :limit => 255
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "embed",       :limit => 255
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.text     "description"
+    t.integer  "user_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -33,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20121121015302) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uid"
+    t.string   "provider"
   end
 
 end
