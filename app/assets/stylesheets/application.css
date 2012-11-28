@@ -25,15 +25,50 @@ div#lista{
 	background-color: #000;
 	color:#8dd1ff;
 	height:440px; 
-	width:470px;
+	width:44%;
 }
 
+#lista p
+{
+	color: #fff;
+	}
 
+#lista iframe
+{
+	width:90%;
+}
+a {
+	text-decoration:none;
+	}
+nav.on_video
+{
+	font-size: 2em;
+	text-align:center;
+	
+	}
+
+a:hover
+{
+	text-decoration: underline;
+	}
+.blanco {
+	color: #fff;
+	}
+.titulo_logo {
+	color: #8dd1ff;
+	text-decoration: none;
+	}
 table#footerlista{
 	background-color: #A7E009;
-	width: 460px;
+	width: 100%;
+	overlay:hidden;
+	position:relative;
 	color: #000;
 }
+
+#footerlista tr{
+	width:44%;
+	}
 
 div#titulo{
 	font-size:10px;
