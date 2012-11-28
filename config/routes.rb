@@ -11,6 +11,9 @@ Facemovie::Application.routes.draw do
 
   root :to => 'main#index' # MainController.index
 
+  match "/follow/:user_id" => "main#follow", :as => :follow # MainController.follow
+
+  # twitter-omniauth 
   match "/auth/:provider/callback" => "sessions#create" # SessionController.create
   match "/sign_out" => "sessions#destroy", :as => :signout # path: signout_path
 

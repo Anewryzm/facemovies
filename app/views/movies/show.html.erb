@@ -10,6 +10,12 @@
   <%= raw @movie.embed %>
 </p>
 
+<p>
+  <b>Follow:</b>
+
+  <%= link_to "follow", follow_path(:user_id => @movie.user_id), :remote => true %>
+</p>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+

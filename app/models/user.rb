@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :movies
 
-  # creation of the user using data from omniauth
+  # creation of the user using data from 
   def self.create_with_omniauth(auth)  
     create! do |user|  
       user.provider = auth["provider"]  
