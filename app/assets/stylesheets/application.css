@@ -28,10 +28,20 @@ div#lista{
 	width:44%;
 }
 
+#lista {
+	text-align: center;
+	margin: 10px auto;
+	display: inline-block;
+}
+
 #lista p
 {
 	color: #fff;
 	}
+
+.movie {
+	text-align: center;
+}
 
 #lista iframe
 {
