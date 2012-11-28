@@ -39,26 +39,34 @@
 
 
 </head>
-<body>
-  <section>
-  	<nav>
-  		<ul>
-  			<li><a href="/">home</a></li>
-  			<li><a href="/users">users</a></li>
-  			<li><a href="/movies">movies</a></li>
-        <li>
-        <% if current_user %>
+<body id="bgcolor">
+<section>
+  <div id="menu">
+  <table width="100%">
+		<tr>
+      
+      <td width="2%" align="center"><img src="http://cdn4.staztic.com/cdn/logos/javamovilseriestv-1.png" height="40px" width="40px"/></td>
+      <td width="60%"><h1>FACEMOVIE</h1></td>
+			<td width="2%"><a id="linkcustom" href="/">home</a></td>
+			<td width="2%"><a id="linkcustom" href="/users">user</a></td>
+			<td width="2%"><a id="linkcustom" href="/movies">movies</a></td>
+      <% if current_user %>
+          
+          <td width="30%" align="right"><%= link_to "Sign Out", signout_path %></td>
+          <!-- signout_path must be registered as named path in routes.rb 
           Welcome <%= current_user.name %>!
-          <%= link_to "Sign Out", signout_path %>
-          <!-- signout_path must be registered as named path in routes.rb -->
+          <a href="/auth/twitter"><img src="http://www.twitlonger.com/images/twitter_sign_in.png"></a></td>
+          -->
         <% else %>  
-          <%= link_to "Sign in with Twitter", "/auth/twitter" %>  
+          <td width="30%" align="right"><a href="/auth/twitter"><img src="http://www.twitlonger.com/images/twitter_sign_in.png"></a></td>  
         <% end %>  
-        </li>
-  		</ul>
-  	</nav>
-  	<div id="alertas"></div>
-  </section>
+
+			
+		</tr>
+	</table>
+  <div>
+	<div id="alertas"></div>
+</section>
 
 <%= yield %>
 

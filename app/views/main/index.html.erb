@@ -1,4 +1,3 @@
-<h1>FaceMovies</h1>
 
 <div class="movie">
 <!--
@@ -12,12 +11,37 @@
 	<% end %>
  -->
 
-	<% if !@lastmovies.blank? %>
-		<% @lastmovies.each do |movie| %>
 
-		  	<%= link_to movie.title, movie %>
-			<%= raw movie.embed %>
-		<% end %>	
+
+	<% if !@lastmovies.blank? %>
+		
+		
+		<% @lastmovies.each do |movie| %>
+		
+			<div id="lista" > 
+		  		<p><%= link_to movie.title, movie %></p>
+			<br>
+		
+			<p><%= raw movie.embed %></p>
+			<table id="footerlista" align="center">
+				<tr>
+				<td width="80%">Categoria: Terror </td>
+				<!-- Place this tag where you want the +1 button to render. -->
+				<td> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://youtu.be/VLm9spNqk_M" data-via="facemovies" data-lang="es" data-count="none" data-hashtags="facemovies" data-dnt="true">Twittear</a></td>
+				<tr>
+			</table>
+
+				<!-- Place this tag after the last +1 button tag. -->
+				<!-- Place this tag after the last +1 button tag. -->
+		
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+				</script>
+
+
+			</div>
+		
+	<% end %>	
+
 	<% else %>
 		<p>There is no movies.</p>
 	<% end %>
