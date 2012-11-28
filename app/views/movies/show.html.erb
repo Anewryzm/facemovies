@@ -9,7 +9,19 @@
   <%= raw @movie.embed %>
 </p>
 
+<<<<<<< HEAD
 <nav class="on_video">
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
 </nav>
+=======
+<p>
+  <b>Follow:</b>
+
+  <%= link_to "follow", follow_path(:user_id => @movie.user_id), :remote => true %>
+</p>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
+
+>>>>>>> 783b83bc250fd04332922425e1bd974b4eb33ce1
