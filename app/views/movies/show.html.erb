@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b class="on_video">Title:</b>
   <%= @movie.title %>
 </p>
 
 <p>
-  <b>Embed:</b>
   <%= raw @movie.embed %>
 </p>
 
-
+<nav class="on_video">
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+</nav>
