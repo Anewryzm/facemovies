@@ -12,7 +12,7 @@ Facemovie::Application.routes.draw do
   root :to => 'main#index' # MainController.index
 
   match "/auth/:provider/callback" => "sessions#create" # SessionController.create
-  match "/sign_out" => "sessions#destroy", :as => :sign_out
+  match "/sign_out" => "sessions#destroy", :as => :signout # path: signout_path
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
